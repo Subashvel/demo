@@ -59,24 +59,14 @@ const App = () => {
 
   return (
     <ChakraProvider>
-      {(isMobile || !isChrome) && !isSafari ? (
-        <VStack padding={10} alignItems="center">
-          <WarningIcon boxSize={100} />
-          <Text paddingTop={4}>
-            This demo works on: Chrome (desktop) and Safari (desktop, mobile)
-            only!
-          </Text>
-        </VStack>
-      ) : (
-        <Conversation
-          config={{
-            transcriberConfig,
-            agentConfig,
-            synthesizerConfig,
-            vocodeConfig,
-          }}
-        />
-      )}
+      <Conversation
+        config={{
+          transcriberConfig,
+          agentConfig,
+          synthesizerConfig,
+          vocodeConfig,
+        }}
+      />
     </ChakraProvider>
   );
 };
